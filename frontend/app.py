@@ -6,7 +6,7 @@ import requests
 import pandas as pd
 from streamlit_local_storage import LocalStorage
 
-API_BASE = os.getenv("API_BASE", "http://localhost:8000")
+API_BASE = st.secrets.get("API_BASE", os.getenv("API_BASE", "http://localhost:8000"))
 local_storage = LocalStorage()
 
 st.set_page_config(
