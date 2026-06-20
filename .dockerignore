@@ -1,0 +1,12 @@
+.env
+.venv
+venv/
+__pycache__/
+*.pyc
+.git
+.gitignore
+.pytest_cache
+data/chroma_db
+*.md
+test_day1.py
+.streamlit
