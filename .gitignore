@@ -8,4 +8,4 @@ data/chroma_db/
 .streamlit/secrets.toml
 *.log
 .DS_Store
-test_day1.py
+test_day.py
