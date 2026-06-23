@@ -11,7 +11,7 @@ local_storage = LocalStorage()
 
 st.set_page_config(
     page_title="AI Test Case Generator",
-    page_icon="🧪",
+    page_icon="⚡",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -224,7 +224,7 @@ def clear_all_data():
 
 # ── SIDEBAR ──────────────────────────────────────────────────
 with st.sidebar:
-    st.markdown("## 🧪 AI Test Generator")
+    st.markdown("##⚡AI Test Generator")
     st.markdown("---")
 
     api_ok = check_api_health()
@@ -278,7 +278,7 @@ with st.sidebar:
 
 
 # ── MAIN ─────────────────────────────────────────────────────
-st.markdown("# 🧪 AI Test Case Generator")
+st.markdown("#⚡AI Test Case Generator")
 st.markdown(
     "Upload a requirements document or paste text → Get structured BDD test cases instantly."
 )
