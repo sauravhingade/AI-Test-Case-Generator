@@ -11,7 +11,7 @@ local_storage = LocalStorage()
 
 st.set_page_config(
     page_title="AI Test Case Generator",
-    page_icon="🧪",
+    page_icon="⚡",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -83,15 +83,11 @@ if "ls_checked" not in st.session_state:
     st.session_state.ls_checked = False
 
 # ── localStorage restore ─────────────────────────────────────
-# On first render after browser reload, getItem returns None because
-# the JS hasn't hydrated. We show a brief loading screen on that first
-# render, then rerun ONCE. On the second render, getItem has the real value.
 stored = local_storage.getItem("test_generator_results")
 
 if not st.session_state.generated and not st.session_state.ls_checked:
     st.session_state.ls_checked = True
     if stored is None:
-        # First render — JS not ready yet. Show loader and rerun once.
         with st.spinner("⏳ Restoring your session..."):
             time.sleep(0.4)
         st.rerun()
@@ -102,7 +98,6 @@ if not st.session_state.generated and not st.session_state.ls_checked:
         except Exception:
             pass
 else:
-    # Second render — JS is ready, try restore if still not generated
     if not st.session_state.generated and stored and stored != "null":
         try:
             st.session_state.response_data = json.loads(stored)
@@ -224,7 +219,7 @@ def clear_all_data():
 
 # ── SIDEBAR ──────────────────────────────────────────────────
 with st.sidebar:
-    st.markdown("## 🧪 AI Test Generator")
+    st.markdown("## ⚡ AI Test Generator")
     st.markdown("---")
 
     api_ok = check_api_health()
@@ -278,7 +273,7 @@ with st.sidebar:
 
 
 # ── MAIN ─────────────────────────────────────────────────────
-st.markdown("# 🧪 AI Test Case Generator")
+st.markdown("# ⚡ AI Test Case Generator")
 st.markdown(
     "Upload a requirements document or paste text → Get structured BDD test cases instantly."
 )
