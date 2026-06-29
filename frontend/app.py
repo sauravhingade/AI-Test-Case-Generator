@@ -273,7 +273,7 @@ with st.sidebar:
 
 
 # ── MAIN ─────────────────────────────────────────────────────
-st.markdown("# ⚡ AI Test Case Generator")
+st.markdown("# AI Test Case Generator")
 st.markdown(
     "Upload a requirements document or paste text → Get structured BDD test cases instantly."
 )
